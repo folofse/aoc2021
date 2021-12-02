@@ -71,6 +71,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore]
     fn window_test_2() {
         let lines = read_lines("./src/input.txt")
             .iter()
