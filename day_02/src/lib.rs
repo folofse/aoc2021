@@ -4,15 +4,15 @@ pub fn movement(lines:Vec<String>)->i32 {
 	let mut y:i32 = 0;
 
 	for line in lines {
-		let strSplit = line.split_whitespace().collect::<Vec<&str>>();
-		let direction:&str = strSplit[0];
-		let speed:i32 = strSplit[1].parse::<i32>().unwrap();
+		let str_split = line.split_whitespace().collect::<Vec<&str>>();
+		let direction:&str = str_split[0];
+		let speed:i32 = str_split[1].parse::<i32>().unwrap();
 
 		match direction {
 			"forward" => x += speed,
 			"up" => y -= speed,
 			"down" => y += speed,
-			_ => println!("defualt?"),
+			_ => println!("default?"),
 		}
 	}
 
@@ -25,9 +25,9 @@ pub fn aim(lines:Vec<String>)->i32 {
 	let mut aim:i32 = 0;
 
 	for line in lines {
-		let strSplit = line.split_whitespace().collect::<Vec<&str>>();
-		let direction:&str = strSplit[0];
-		let speed:i32 = strSplit[1].parse::<i32>().unwrap();
+		let str_split = line.split_whitespace().collect::<Vec<&str>>();
+		let direction:&str = str_split[0];
+		let speed:i32 = str_split[1].parse::<i32>().unwrap();
 
 		match direction {
 			"forward" => {
@@ -84,6 +84,7 @@ mod tests {
 	}
 
 	#[test]
+	#[ignore]
 	fn aim_test2() {
 		let lines = read_lines("./src/input.txt")
 			.iter()
