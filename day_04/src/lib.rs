@@ -29,8 +29,8 @@ fn play(call_out_numbers:Vec<i32>, mut boards:Vec<Vec<Vec<i32>>>, find_first:boo
 
 
 	'call_outs: for num in call_out_numbers {
-		'boards: for i in 0..boards.len() {
-			'row_cols: for j in 0..boards[i].len() {
+		for i in 0..boards.len() {
+			for j in 0..boards[i].len() {
 
 				boards[i][j].retain(|x| *x != num);
 
@@ -141,7 +141,7 @@ mod tests {
 	}
 
 	#[test]
-	
+	#[ignore]
 	fn bingo2_test2() {
 		let lines = read_lines("./src/input.txt")
 			.iter()
