@@ -24,11 +24,8 @@ pub fn fish(lines:Vec<String>, max_days:i32)->i64 {
 		counter[6] = counter[6] + fish_ages[0]; // New cycle, add previous cycle
 
 		fish_ages = counter.clone();
-		println!("{:?}", counter);
-		
 		
 	}
-	println!("{:?}", fish_ages);
 	return fish_ages.iter().sum();
 }
 
@@ -72,6 +69,7 @@ mod tests {
 	}
 
 	#[test]
+	#[ignore]
 	fn fish_test4() {
 		let lines = read_lines("./src/input.txt")
 			.iter()
