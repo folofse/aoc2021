@@ -9,8 +9,8 @@ pub fn diagram(lines:Vec<String>, use_diagonal:bool)->i32 {
 	
 	let mut grid:Vec<Vec<i32>> = vec![vec![0; max_values[0]]; max_values[1]];
 
-	values.iter().for_each(|(row)| {
-		row.iter().for_each(|(col)| {
+	values.iter().for_each(|row| {
+		row.iter().for_each(|col| {
 			if col[0] == col[2] { // Vertical
 				for y in cmp::min(col[1], col[3])..=cmp::max(col[1], col[3]) {
 					grid[y][col[0]] += 1;
@@ -123,12 +123,13 @@ mod tests {
 	}	
 	
 	#[test]
+	#[ignore]
 	fn diagram_test4() {
 		let lines = read_lines("./src/input.txt")
 			.iter()
 			.map(|f| f.parse().unwrap())
 			.collect();
 
-		assert_eq!(diagram(lines, true), 12);
+		assert_eq!(diagram(lines, true), 17882);
 	}	
 }
