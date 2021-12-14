@@ -1,12 +1,10 @@
-use std::vec;
-
 pub fn fuel(lines:Vec<String>, part1:bool)->i32 {
 	let crabs:Vec<i32> = lines[0].split(",").map(|x| x.parse::<i32>().unwrap()).collect();
-	let mut total_fuel:i32 = 0;
+	
 	let mut least_fuel = 0;
 
 	for c1 in 1..=*crabs.iter().max().unwrap() {
-		total_fuel = 0;
+		let mut total_fuel:i32 = 0;
 		for c2 in crabs.clone() {
 			let diff = i32::abs(c1 - c2);
 			if part1 {
@@ -66,7 +64,7 @@ mod tests {
 	}
 
 	#[test]
-	
+	#[ignore]
 	fn fuel_test4() {
 		let lines = read_lines("./src/input.txt")
 			.iter()
